@@ -1,0 +1,404 @@
+/*
+*Page name
+*Copyright 2020
+*Author
+*License
+*/
+/* ------------------- *\
+Content
+\* ------------------- */
+/*
+*Content
+*Global
+*Layout
+*Component
+*/
+
+/* ------------------- *\
+Globel;
+\* ------------------- */
+* {
+    box-sizing: border-box;
+    position: relative;
+}
+html,body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p,ul {
+    margin: 0;
+}
+ul {
+    padding: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+/* ------------------- *\
+Layout
+\* ------------------- */
+.container {
+    width: min(90%, 1140px);
+    margin: 0 auto; /* 至中 */
+    padding: 0  16px;
+    /* border: 4px solid #000; */
+}
+.row {
+    /* border: 1px solid blue; */
+    margin: 0 -16px;
+}
+.col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* border: 1px solid #000; */
+}
+.col-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* border: 1px solid #000; */
+}
+.col-4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* border: 1px solid #000; */
+}
+.col-2, .col-3, .col-4 {
+    gap: clamp(16px, 3vw, 32px);
+}
+@media screen and (max-width: 917px) {
+    .container {
+        width: 85%;
+    }
+    .col-2 {
+        grid-template-columns: 1fr;
+    }
+    .col-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+    .col-4 {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}
+@media screen and (max-width: 640px) {
+    .container {
+        width: 90%;
+    }
+    .col-2 {
+        grid-template-columns: 1fr;
+    }
+    .col-3 {
+        grid-template-columns: 1fr;
+    }
+    .col-4 {
+        grid-template-columns: 1fr;
+    }
+    
+}
+/* ------------------- *\
+Component
+\* ------------------- */
+
+/* btn */
+.btn { 
+    font-size: 16px;
+    line-height: 24px;
+    color: #d5a26f;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: none;
+    border: 1px solid #d5a26f;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.btn:hover { 
+    background-color: #d5a26f;
+    color: #FFF;
+}
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+/* image container */
+.image-container {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    /* border: 1px solid #000; */
+}
+/* .image-container::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 75%;
+} */
+.image-container .image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* hero */
+.hero {
+    padding: 200px 0;
+}
+.hero-bg-white {
+    background-color: #fefefe;
+}
+.hero-bg-grey {
+    background-color: #efefef;
+}
+
+/* navbar */
+.navbar {
+    height: 64px;
+    background-color: #1010109e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+}
+.navbar .col-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+.navbar .container .brand{
+    width: 160px;
+    height: 63px;
+    background-image: url(../RimooCafe/images/common/logo.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* 留裡面的文字是為了後續優化，但沒有要顯示他所以就把它隱藏起來 */
+    white-space: nowrap;
+    text-indent: 100%;
+    overflow: hidden;
+}
+.navbar .container .nav {
+    display: grid;
+    grid-template-columns: repeat(5,45px);
+    justify-content: end;
+    align-self: center;
+}
+.navbar .container .nav .nav-link {
+    color: #FFF;
+    transition: all 0.3s;
+}
+.navbar .container .nav .nav-link:hover {
+    color: rgb(212, 183, 21);
+}
+
+/* jumbotron */
+.jumbotron {
+    /* border: 1px solid #000; */
+    padding-top: 224px;
+    padding-bottom: 160px;
+    /* background-image: ; */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),url(./images/bg/bg001.jpg); /* rgba(0, 0, 0, 1) 表示完全顯示 rgba(0, 0, 0, 0.5) 表示半透明。*/
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    /* 滑動滾輪時圖片依舊固定在螢幕上 */
+}
+.jumbotron .logo-image {
+    width: 320px;
+    height: 320px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+/* @supports (-webkit-touch-callout: none) {
+    .jumbotron {
+        background-attachment: scroll;
+    }
+} */
+/* about-preview */
+.about-preview .title {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 24px;
+    margin-top: 80px;
+}
+.about-preview .para {
+    font-size: 16px;
+    line-height: 32px;
+    color: #333;
+    margin-bottom: 24px;
+    text-align: justify; /* 讓文字右側不會參差不齊*/
+}
+
+/* section-intro */
+.section-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.section-intro .title {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 24px;
+}
+.section-intro .para{
+    font-size: 16px;
+    line-height: 32px;
+    color: #333;
+}
+/* service-item */
+.service-item .title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 8px;
+
+    /* 假設文字量太大的話會跑版，利用下面的方法可以將多的文字用刪節號隱藏 */
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+.service-item .subtitle {
+    font-size: 14px;
+    color: #d5a26f;
+    margin-bottom: 16px;
+}
+.service-item .para{
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+    text-align: justify;
+    color: #333;
+}
+
+/* reservation */
+.reservation {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),url(./images/bg/bg002.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+.reservation .section-intro .title,
+.reservation .section-intro .para {
+    color: #fff
+}
+
+/* menu-list */
+.menu-list {
+    margin-bottom: 80px;
+}
+.menu-list:last-child {
+    margin-bottom: 0;
+}
+.menu-list .title-bar {
+    margin-bottom: 16px;
+}
+.menu-list .title-bar .title {
+    display: grid;
+    align-self: center;
+    color: #d5a26f;
+    font-size: 24px;
+    line-height: 40px;
+    padding: 0;
+    padding-left: 16px;
+    border-left: 5px solid #d5a26f;
+}
+.menu-list .title-bar .btn {
+    display: grid;
+    justify-self: end;
+}
+.menu-list .list-item .title {
+    font-size: 18px;
+    color: #333;
+    line-height: 24px;
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+.menu-list .list-item .subtitle {
+    font-size: 14px;
+    color: #d5a26f;
+}
+
+/* contact-info */
+.contact-info {
+    padding-top: 64px;
+}
+.contact-info .info-item{
+    margin-bottom: 24px;
+}
+.contact-info .info-item .title{
+    color: #d5a26f;
+    line-height: 36px;
+    margin-bottom: 16px;
+}
+.contact-info .info-item .title span{
+    border-bottom: 2px solid #d5a26f;
+    display: inline-block;
+}
+.contact-info .info-item .info{
+    line-height: 36px;
+    color: #333;
+}
+
+/* map-container */
+.map-container {
+    width: 100%;
+    padding-top: 75%;
+    /* border: 1px solid #535353; */
+}
+.map-container iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* footer */
+.footer {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),url(./images/bg/bg003.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.footer .brand {
+    display: flex;
+    justify-self: center;
+    width: 240px;
+    height: 240px;
+    background-image: url(./images/common/logo-w.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.footer .nav {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.footer .nav .nav-link{
+    color: #FFF;
+    line-height: 16px;
+    transition: all 0.3s;
+}
+.footer .nav .nav-link:hover{
+    color: #d5a26f
+}
+.footer .copyright {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #CCC;
+    text-align: center;
+    line-height: 24px;
+    font-size: clamp(14px, 2vw, 18px);
+    padding: 16px 0;
+}
