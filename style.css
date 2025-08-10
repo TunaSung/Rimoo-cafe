@@ -175,7 +175,7 @@ Component
 .navbar .container .brand{
     width: 160px;
     height: 63px;
-    background-image: url(../RimooCafe/images/common/logo.jpg);
+    background-image: url('images/common/logo.jpg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -205,7 +205,7 @@ Component
     padding-top: 224px;
     padding-bottom: 160px;
     /* background-image: ; */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),url(./images/bg/bg001.jpg); /* rgba(0, 0, 0, 1) 表示完全顯示 rgba(0, 0, 0, 0.5) 表示半透明。*/
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),url('images/bg/bg001.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -281,7 +281,7 @@ Component
 
 /* reservation */
 .reservation {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),url(./images/bg/bg002.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),url('images/bg/bg002.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -363,7 +363,7 @@ Component
 
 /* footer */
 .footer {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),url(./images/bg/bg003.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),url('images/bg/bg003.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -374,7 +374,7 @@ Component
     justify-self: center;
     width: 240px;
     height: 240px;
-    background-image: url(./images/common/logo-w.png);
+    background-image: url('images/common/logo-w.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
