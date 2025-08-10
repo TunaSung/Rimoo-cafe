@@ -173,6 +173,7 @@ Component
     gap: 32px;
 }
 .navbar .container .brand{
+    display: block;
     width: 160px;
     height: 63px;
     background-image: url('images/common/logo.jpg');
