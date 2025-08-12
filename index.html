@@ -17,7 +17,12 @@
               <a href="#!" class="brand">
                 <h3>Rimoo cafe</h3>
               </a>
-              <ul class="nav">
+              <button class="hamburger" aria-expanded="false" aria-controls="primary-nav" aria-label="開啟主選單">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </button>
+              <ul id="primary-nav" class="nav">
                 <li class="nav-item">
                     <a href="#about" class="nav-link">關於</a>
                 </li>
@@ -330,10 +335,44 @@
           </div>
         </div>
         <div class="copyright">
-          <p>© 2021 Rimoo Cafe. All Rights Reserved.</p>
+          <p>© 2025 Rimoo Cafe. All Rights Reserved.</p>
         </div>
       </footer>
       <!-- End footer -->
     </div>
+
+    <script>
+      (function () {
+        const header = document.querySelector('.navbar');
+        const btn = document.querySelector('.hamburger');
+        const nav = document.getElementById('primary-nav');
+
+        if (!btn || !nav || !header) return;
+
+        function closeMenu() {
+          btn.setAttribute('aria-expanded', 'false');
+          header.classList.remove('is-open');
+          document.body.classList.remove('no-scroll');
+        }
+
+        btn.addEventListener('click', () => {
+          const open = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!open));
+          header.classList.toggle('is-open');
+          document.body.classList.toggle('no-scroll', !open);
+        });
+
+        // 點到連結就關閉
+        nav.addEventListener('click', (e) => {
+          if (e.target.matches('.nav-link')) closeMenu();
+        });
+
+        // 按 ESC 關閉
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') closeMenu();
+        });
+      })();
+    </script>
+
   </body>
 </html>
