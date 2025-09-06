@@ -15,4 +15,5 @@
 
 ## 技術棧
 - **Frontend**：HTML + CSS (RWD)
-- **Deploy**：靜態網站平台 (可選 Vercel / Netlify)
+- **Deploy**：github pages
+
